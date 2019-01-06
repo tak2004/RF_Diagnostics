@@ -4,7 +4,6 @@
 
 using namespace RadonFramework::System::IO;
 using namespace RadonFramework::Core::Types;
-using namespace RadonFramework::Diagnostics;
 
 namespace RadonFramework::IO {
 
