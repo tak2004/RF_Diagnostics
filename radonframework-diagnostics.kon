@@ -1,0 +1,30 @@
+description=Radon Framework Diagnostics
+version=1.0.0
+author=Thomas Kunze
+package{
+  ignore[
+    dist
+    .gitignore
+  ]
+}
+build{
+  generator{
+    cmake{
+      source=$(radonframework-diagnostics.path)
+      builddir=$(radonframework-diagnostics.path)\build
+      creates=$(radonframework-diagnostics.path)\dist\RadonFrameworkDiagnostics.lib
+      parameters=-DRF_DIAGNOSTICS_COMPILER_STATIC_LINKED_CRT=ON
+    }
+  }
+  export{
+    includes[
+      $(radonframework-diagnostics.path)\include
+    ]
+    librarypaths[
+      $(radonframework-diagnostics.path)\dist
+    ]
+    libs[
+      RadonFrameworkDiagnostics.lib
+    ]
+  }
+}
